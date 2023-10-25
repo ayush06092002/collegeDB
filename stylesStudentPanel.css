@@ -1,0 +1,77 @@
+/* Reset some default styles */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    position: relative; /* Add this line to make it relative for proper positioning */
+}
+
+/* Header Styles */
+.header {
+    background-color: #007BFF;
+    color: #FFF;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    background-color: #333;
+    color: #FFF;
+    width: 200px;
+    padding: 20px;
+    transition: width 0.3s;
+    height: 100vh;
+    top: 60px;
+    position: fixed; /* Add this line to make it fixed */
+    border-top-right-radius: 10px;
+    z-index: 1; /* Ensure the sidebar appears above the content */
+}
+
+/* Content Styles */
+.content {
+    background-color: #FFF;
+    color: #333;
+    transition: margin 0.3s;
+    margin-left: 200px; /* Add this line to give space for the sidebar */
+    padding: 20px; /* Add padding to separate content from sidebar */
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar a {
+    color: #FFF;
+    text-decoration: none;
+    display: block;
+    padding: 10px 0;
+    transition: 0.2s;
+}
+
+.sidebar a:hover {
+    background-color: #007BFF;
+    padding-left: 10px;
+    border-left: 5px solid #FFF;
+    transition: 0.3s;
+}
+
+
+/* Student Information Styles */
+.student-info {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 0 90px; /* Add margin to separate from the sidebar */
+}
