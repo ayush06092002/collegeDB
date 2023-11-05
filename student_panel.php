@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Student Dashboard</title>
-    <link rel="stylesheet" type="text/css" href="stylesStudentPanel.css">
+    <link rel="stylesheet" type="text/css" href="stylesStudentPan.css">
 </head>
 <body>
     <div class="dashboard">

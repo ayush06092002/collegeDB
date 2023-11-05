@@ -28,12 +28,12 @@
                     <?php
                     // Fetch the list of available courses and their departments from the courses table
                     require('db.php');
-                    $courses_sql = "SELECT course_name, department FROM courses";
+                    $courses_sql = "SELECT course_id, course_name, department FROM courses";
                     $courses_result = $conn->query($courses_sql);
 
                     if ($courses_result->num_rows > 0) {
                         while ($row = $courses_result->fetch_assoc()) {
-                            echo '<option value="' . $row["course_name"] . '">' . $row["course_name"] . ' (' . $row["department"] . ')</option>';
+                            echo '<option value="' . $row["course_id"] . '">' . $row["course_name"] . ' (' . $row["department"] . ')</option>';
                         }
                     }
                     $conn->close();

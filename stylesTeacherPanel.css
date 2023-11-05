@@ -8,7 +8,7 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
     margin: 0;
-    position: relative; /* Add this line to make it relative for proper positioning */
+    position: relative;
 }
 
 /* Header Styles */
@@ -28,9 +28,9 @@ body {
     transition: width 0.3s;
     height: 100vh;
     top: 60px;
-    position: fixed; /* Add this line to make it fixed */
+    position: fixed;
     border-top-right-radius: 10px;
-    z-index: 1; /* Ensure the sidebar appears above the content */
+    z-index: 1;
 }
 
 /* Content Styles */
@@ -38,8 +38,8 @@ body {
     background-color: #FFF;
     color: #333;
     transition: margin 0.3s;
-    margin-left: 200px; /* Add this line to give space for the sidebar */
-    padding: 20px; /* Add padding to separate content from sidebar */
+    margin-left: 200px;
+    padding: 20px;
 }
 
 .sidebar ul {
@@ -66,12 +66,43 @@ body {
     transition: 0.3s;
 }
 
+/* Sidebar Toggle Button Styles */
+.sidebar-toggle {
+    cursor: pointer;
+    background-color: #007BFF;
+    color: #FFF;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    border-radius: 50%;
+    z-index: 1;
+}
 
-/* Student Information Styles */
-.student-info {
+/* Section Styles */
+.section {
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    margin: 0 90px; /* Add margin to separate from the sidebar */
+    margin: 0 20px;
+    margin-bottom: 20px;
+}
+
+/* Additional Styles for Teacher Panel Sections */
+.student-list {
+    /* Add specific styles for student list section */
+}
+
+.mark-entry {
+    /* Add specific styles for mark entry section */
+}
+
+.attendance-management {
+    /* Add specific styles for attendance management section */
+}
+
+.timetable {
+    /* Add specific styles for timetable section */
 }

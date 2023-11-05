@@ -1,0 +1,59 @@
+/* Reset some default styles */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    position: relative;
+}
+
+/* Header Styles */
+h1 {
+    background-color: #007BFF;
+    color: #FFF;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Tab Styles */
+.tab {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.tab button {
+    background-color: #007BFF;
+    color: #FFF;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+.tab button.active {
+    background-color: #0056b3;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+/* Add animations and other styles as needed */

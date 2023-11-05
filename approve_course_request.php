@@ -27,7 +27,7 @@
                         echo "<tr>";
                         echo "<td>" . $request['student_roll_number'] . "</td>";
                         echo "<td>" . $request['course_name'] . "</td>";
-                        echo "<td>" . $request['instructor_name'] . "</td>";
+                        echo "<td>" . $request['teacher_name'] . "</td>";
                         echo "<td>" . $request['request_date'] . "</td>";
                         echo "<td><a href='approve_request.php?id=" . $request['id'] . "&action=approve'>Approve</a></td>";
                         echo "<td><a href='approve_request.php?id=" . $request['id'] . "&action=reject'>Reject</a></td>";

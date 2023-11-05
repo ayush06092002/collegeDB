@@ -8,24 +8,26 @@ if (isset($_GET['id'])) {
     $request_id = $_GET['id'];
 
     // Fetch the request from the requestcourses table
-    $fetch_request_query = "SELECT rc.student_roll_number, c.course_name, i.instructor_name
+    $fetch_request_query = "SELECT rc.student_roll_number, c.course_name, i.teacher_name, rc.id
                             FROM requestcourses rc
                             JOIN courses c ON rc.course_id = c.course_id
-                            JOIN courses_instructors ci ON c.course_name = ci.course_name
-                            JOIN instructors i ON ci.instructor_id = i.instructor_id";
+                            JOIN courses_instructors ci ON c.course_id = ci.course_id
+                            JOIN instructors i ON ci.teacher_id = i.teacher_id
+                            WHERE rc.id = ?";
 
     $fetch_request_stmt = $conn->prepare($fetch_request_query);
     $fetch_request_stmt->bind_param("i", $request_id);
 
     if ($fetch_request_stmt->execute()) {
         $fetch_request_result = $fetch_request_stmt->get_result();
+
         if ($fetch_request_result->num_rows === 1) {
             $request = $fetch_request_result->fetch_assoc();
 
             // Insert the approved course into the approved_courses table
             $insert_sql = "INSERT INTO approved_courses (course_name, instructor_name, student_roll_number) VALUES (?, ?, ?)";
             $insert_stmt = $conn->prepare($insert_sql);
-            $insert_stmt->bind_param("sss", $request['course_name'], $request['instructor_name'], $request['student_roll_number']);
+            $insert_stmt->bind_param("sss", $request['course_name'], $request['teacher_name'], $request['student_roll_number']);
 
             if ($insert_stmt->execute()) {
                 // Approved course added to approved_courses table successfully
@@ -61,3 +63,4 @@ if (isset($_GET['id'])) {
 // Close the database connection
 $conn->close();
 ?>
+    
