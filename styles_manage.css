@@ -15,8 +15,9 @@ body {
 h1 {
     background-color: #007BFF;
     color: #FFF;
-    padding: 10px;
+    padding: 20px 0;
     text-align: center;
+    font-size: 24px;
 }
 
 /* Tab Styles */
@@ -34,6 +35,8 @@ h1 {
     border-radius: 5px;
     cursor: pointer;
     margin: 0 10px;
+    font-size: 16px;
+    transition: background-color 0.3s;
 }
 
 .tab button.active {
@@ -45,6 +48,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     border-spacing: 0;
+    margin-top: 20px;
 }
 
 table, th, td {
@@ -56,4 +60,95 @@ th, td {
     text-align: center;
 }
 
+th {
+    background-color: #007BFF;
+    color: #FFF;
+    font-weight: bold;
+}
+
+td {
+    background-color: #f0f0f0;
+}
+
 /* Add animations and other styles as needed */
+
+/* Style links in the table */
+a {
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+}
+
+tr:hover {
+    background-color: #e0e0e0;
+    transition: background-color 0.3s;
+}
+
+/* Add animation to table rows */
+
+tr:hover {
+    animation: tableRowAnimation 0.8s;
+}
+
+/* Update the link styles in the table */
+a {
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+/* Center the content in the table cells */
+th, td {
+    text-align: center;
+}
+
+/* Add spacing and borders to the header row */
+th {
+    padding: 15px;
+    border-bottom: 2px solid #007BFF;
+}
+
+/* Add hover effect to table rows */
+tr:hover {
+    background-color: #e0e0e0;
+}
+
+/* Increase spacing between the tables and content */
+.tabcontent {
+    padding: 20px;
+}
+
+/* Add a bit of spacing between elements */
+h2 {
+    margin-bottom: 10px;
+}
+
+/* Add a margin between the tables and the tabs */
+.tabcontent table {
+    margin-top: 10px;
+}
+
+#studentSearchInput, #teacherSearchInput, #courseSearchInput {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+/* Style for the search button */
+.searchButton {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+

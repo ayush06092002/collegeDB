@@ -2,6 +2,7 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     require('db.php');
 
+    // Collect data from the form
     $course_name = $_POST['course_name'];
     $course_code = $_POST['course_code'];
     $department = $_POST['department'];

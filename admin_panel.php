@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Admin Panel</title>
-    <link rel="stylesheet" type="text/css" href="stylesAdmin.css">
+    <link rel="stylesheet" type="text/css" href="stylesAdminn.css">
 </head>
 <body>
     <div class="container">
