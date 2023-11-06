@@ -1,66 +1,45 @@
-<?php
-session_start();
-// Check if the teacher is logged in (teacher ID is stored in the session)
-if (isset($_SESSION['teacher_id'])) {
-    $teacher_id = $_SESSION['teacher_id'];
-
-    // The rest of your TeacherPanel code here
-    // You can use $teacher_id for database queries or other operations
-} else {
-    // Redirect to the teacher login page if not logged in
-    header("Location: teacher_login.php");
-    exit();
-}
-?>
-
 <!DOCTYPE html>
 <html>
-
 <head>
-    <title>Teacher Panel</title>
-    <link rel="stylesheet" type="text/css" href="stylesTeacherPanel.css">
+    <title>Teacher Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="stylesTeacherPanell.css">
 </head>
-
 <body>
-    <div class="container">
-        <h2>Welcome, Teacher Name!</h2>
-        <div class="menu">
-            <ul>
-                <li><a href="teacher_panel.php">Home</a></li>
-                <li><a href="teacher_students.php">View Students</a></li>
-                <li><a href="teacher_marks.php">Enter Marks</a></li>
-                <li><a href="teacher_attendance.php">Take Attendance</a></li>
-                <li><a href="teacher_timetable.php">Timetable</a></li>
-            </ul>
+    <div class="dashboard">
+        <div class="header">
+            <h2>
+                <?php
+                session_start();
+                if (isset($_SESSION['username'])) {
+                    echo "Welcome, " . $_SESSION['teacher_name'] . "!";
+                }
+                ?>
+            </h2>
         </div>
-
         <div class="content">
-            <?php
-            // Connect to the database using your db.php script
-            require('db.php');
+            <!-- Sidebar code should be present here -->
+            <div class="sidebar">
+                <!-- Sidebar navigation menu -->
+                <!-- Add your sidebar links here -->
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="view_my_courses.php">View My Courses</a></li>
+                    <li><a href="view_my_students.php">View My Students</a></li>
+                    <li><a href="#">Grades</a></li>
+                    <li><a href="logout.php" class="logout-button">Logout</a></li>
+                </ul>
+            </div>
 
-            // Assuming you have a teacher ID to identify the teacher
-             // Replace with the actual teacher's ID
-
-            // Query to retrieve teacher's name
-            $teacher_query = "SELECT teacher_name FROM teachers WHERE teacher_id = ?";
-            $teacher_stmt = $conn->prepare($teacher_query);
-            $teacher_stmt->bind_param("i", $teacher_id);
-            $teacher_stmt->execute();
-            $teacher_stmt->bind_result($teacher_name);
-            $teacher_stmt->fetch();
-            $teacher_stmt->close();
-
-            echo "<h3>Welcome, " . $teacher_name . "!</h3>";
-
-            // You can add content for your Teacher Panel here
-            // For example, list students, enter marks, take attendance, or display the timetable
-
-            // Don't forget to close the database connection when you're done
-            $conn->close();
-            ?>
+            <div class="teacher-info">
+                <?php
+                if (isset($_SESSION['username'])) {
+                    echo "<h3>ID: " . $_SESSION['id'] . "</h3>";
+                    // Add other teacher information as needed
+                }
+                ?>
+            </div>
         </div>
     </div>
+    <script src="scriptTeacher.js"></script>
 </body>
-
 </html>
